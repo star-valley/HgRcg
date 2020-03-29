@@ -32,7 +32,6 @@ typedef vector<curve> cluster;
 extern IplImage* SkinSeg(IplImage* src);
 extern Mat EdgeDtc(Mat gray);
 extern curve ContourExtr(Mat image, Mat& imcontour);
-//extern float* FrDscr(curve contour, int Eff_FDV_dim);
 extern Vec4i HullDscr(curve contour, Size ImgSize, Mat& imhull, Mat& imdefects);
 extern Gesture HullDtm(Vec4i cwdpths);
 extern void NameShow(Gesture gesture, char* HgName, char* gesture_name, char* result_name);
