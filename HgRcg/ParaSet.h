@@ -18,7 +18,7 @@ typedef enum gesture_enum
 {
 	Palm = 0,
 	Check = 1,
-	Victory = 2,
+	Up = 2,
 	Illegal = 3
 }Gesture;
 typedef enum result_enum

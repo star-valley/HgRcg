@@ -16,7 +16,7 @@ Gesture HullDtm(Vec4i cwdpths)
 	{
 	case 4:gesture = Palm; break;
 	case 2:gesture = Check; break;
-	case 1:gesture = Victory; break;
+	case 1:gesture = Up; break;
 	default:gesture = Illegal;
 	}
 
