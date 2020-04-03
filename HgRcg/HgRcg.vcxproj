@@ -139,12 +139,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ContourExtr.cpp" />
+    <ClCompile Include="CprSeg.cpp" />
     <ClCompile Include="EdgeDtc.cpp" />
+    <ClCompile Include="ElpsSeg.cpp" />
     <ClCompile Include="HullDscr.cpp" />
     <ClCompile Include="HullDtm.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="NameShow.cpp" />
-    <ClCompile Include="SkinSeg.cpp" />
+    <ClCompile Include="RgbSeg.cpp" />
+    <ClCompile Include="WhtBln.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ParaSet.h" />

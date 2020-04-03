@@ -29,7 +29,7 @@ typedef enum result_enum
 typedef vector<Point> curve;
 typedef vector<curve> cluster;
 
-extern IplImage* SkinSeg(IplImage* src);
+extern Mat CprSeg(Mat src);
 extern Mat EdgeDtc(Mat gray);
 extern curve ContourExtr(Mat image, Mat& imcontour);
 extern Vec4i HullDscr(curve contour, Size ImgSize, Mat& imhull, Mat& imdefects);

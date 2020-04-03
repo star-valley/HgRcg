@@ -33,7 +33,16 @@
     <ClCompile Include="NameShow.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="SkinSeg.cpp">
+    <ClCompile Include="CprSeg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ElpsSeg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="RgbSeg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="WhtBln.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
