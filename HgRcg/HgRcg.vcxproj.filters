@@ -24,9 +24,6 @@
     <ClCompile Include="HullDscr.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="HullDtm.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -43,6 +40,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="WhtBln.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="GesDtm.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

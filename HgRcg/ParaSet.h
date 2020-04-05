@@ -19,7 +19,8 @@ typedef enum gesture_enum
 	Palm = 0,
 	Check = 1,
 	Up = 2,
-	Illegal = 3
+	Down = 3,
+	Illegal = 4
 }Gesture;
 typedef enum result_enum
 {
@@ -32,6 +33,6 @@ typedef vector<curve> cluster;
 extern Mat CprSeg(Mat src);
 extern Mat EdgeDtc(Mat gray);
 extern curve ContourExtr(Mat image, Mat& imcontour);
-extern Vec4i HullDscr(curve contour, Size ImgSize, Mat& imhull, Mat& imdefects);
-extern Gesture HullDtm(Vec4i cwdpths);
+extern Vec4i HullDscr(curve contour, Size ImgSize, Point& Dweb, Mat& imhull, Mat& imdefects);
+extern Gesture GesDtm(Vec4i cwdpths, Point Dweb, curve contour);
 extern void NameShow(Gesture gesture, char* HgName, char* gesture_name, char* result_name);

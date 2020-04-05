@@ -40,11 +40,12 @@ int main()
 	Mat imcontour = Mat::zeros(edge.size(), CV_8UC3);
 	curve contour = ContourExtr(edge, imcontour);
 
+	Point Dweb;
 	Mat imhull = Mat::zeros(edge.size(), CV_8UC3);
 	Mat imdefects = Mat::zeros(edge.size(), CV_8UC3);
-	Vec4i cwdpths = HullDscr(contour, edge.size(), imhull, imdefects);
+	Vec4i cwdpths = HullDscr(contour, edge.size(), Dweb, imhull, imdefects);
 
-	Gesture gesture = HullDtm(cwdpths);
+	Gesture gesture = GesDtm(cwdpths, Dweb, contour);
 
 	char gesture_name[16] = { 0 };
 	char result_name[8] = { 0 };

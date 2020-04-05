@@ -33,8 +33,8 @@ curve ContourExtr(Mat image, Mat& imcontour)
 	{
 		//筛选标准是外接直矩形面积最大
 		Rect rect = boundingRect(contours[i]);
-		CurrentArea=rect.width*rect.height;
-		if(MaxArea<CurrentArea)
+		CurrentArea = rect.width * rect.height;
+		if (MaxArea < CurrentArea)
 		{
 			tag = i;
 			MaxArea = CurrentArea;

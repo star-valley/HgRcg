@@ -1,6 +1,6 @@
 #include "ParaSet.h"
 
-Vec4i HullDscr(curve contour,Size ImgSize, Mat& imhull, Mat& imdefects)
+Vec4i HullDscr(curve contour, Size ImgSize, Point& Dweb, Mat& imhull, Mat& imdefects)
 {
 	int width = ImgSize.width;
 	int height = ImgSize.height;
@@ -25,6 +25,7 @@ Vec4i HullDscr(curve contour,Size ImgSize, Mat& imhull, Mat& imdefects)
 	Vec4i defect;
 	int idxfront, idxrear, idxvalley, depth;
 	Point front, rear, valley;
+	vector<Point> valleys;
 	vector<int> depths;
 	int counter = 0;
 	for (int i = 0; i < N_defects; i++)
@@ -45,6 +46,7 @@ Vec4i HullDscr(curve contour,Size ImgSize, Mat& imhull, Mat& imdefects)
 		{
 			//depths[counter] = depth;
 			depths.push_back(depth);
+			valleys.push_back(valley);
 			counter++;
 		}
 
@@ -59,9 +61,22 @@ Vec4i HullDscr(curve contour,Size ImgSize, Mat& imhull, Mat& imdefects)
 		}
 	}
 
+	//求最深蹼坐标
+	int N_depths = counter;
+	int idxm = 0;
+	int mdepth = 0;
+	for (int i = 0; i < N_depths; i++)
+	{
+		if (mdepth < depths[i])
+		{
+			idxm = i;
+			mdepth = depths[i];
+		}
+	}
+	Dweb = valleys[idxm];
+
 	//构建预蹼深度数组
 	Vec4i cwdpths;
-	int N_depths = counter;
 	int t;
 	for (int i = 0; i < 4; i++)
 	{
