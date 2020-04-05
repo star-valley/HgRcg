@@ -5,22 +5,22 @@ Vec4i HullDscr(curve contour, Size ImgSize, Point& Dweb, Mat& imhull, Mat& imdef
 	int width = ImgSize.width;
 	int height = ImgSize.height;
 	
-	//求凸包
+	/*求凸包*/
 	curve hull;
 	convexHull(contour, hull, false, true);
 	vector<int> hull_int;
 	convexHull(contour, hull_int, false, true);
 
-	//求缺陷
+	/*求凸包缺陷集*/
 	vector<Vec4i> defects;
 	convexityDefects(contour, hull_int, defects);
 
-	//绘制凸包
+	/*绘制凸包*/
 	cluster hull_pack;
 	hull_pack.push_back(hull);
 	drawContours(imhull, hull_pack, -1, Scalar(255, 255, 255), 1, 8, vector<Vec4i>());
 
-	//绘制各凸包缺陷
+	/*绘制各凸包缺陷*/
 	int N_defects = defects.size();
 	Vec4i defect;
 	int idxfront, idxrear, idxvalley, depth;
@@ -44,7 +44,6 @@ Vec4i HullDscr(curve contour, Size ImgSize, Point& Dweb, Mat& imhull, Mat& imdef
 		//寻找非图框缺陷
 		if (front.x % (width - 2) && front.y % (height - 2))
 		{
-			//depths[counter] = depth;
 			depths.push_back(depth);
 			valleys.push_back(valley);
 			counter++;
@@ -61,7 +60,7 @@ Vec4i HullDscr(curve contour, Size ImgSize, Point& Dweb, Mat& imhull, Mat& imdef
 		}
 	}
 
-	//求最深蹼坐标
+	/*求最深蹼坐标*/
 	int N_depths = counter;
 	int idxm = 0;
 	int mdepth = 0;
@@ -75,7 +74,7 @@ Vec4i HullDscr(curve contour, Size ImgSize, Point& Dweb, Mat& imhull, Mat& imdef
 	}
 	Dweb = valleys[idxm];
 
-	//构建预蹼深度数组
+	/*构建预蹼深度数组*/
 	Vec4i cwdpths;
 	int t;
 	for (int i = 0; i < 4; i++)
