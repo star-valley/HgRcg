@@ -8,10 +8,8 @@ int main()
 	gets_s(HgName, 8);
 	printf("Please input the index:\n");
 	gets_s(index, 8);
-	//若图片均为jpg格式，且不更改文件夹，则修改手势类型和序号即可
 
 	char folder[] = "D:\\photos_expr\\HGnv\\";
-
 	char file[16] = { 0 };
 	char sub_bnr[] = "_bnr", sub_edge[] = "_edge", sub_contour[] = "_contour", sub_hull[] = "_hull", sub_defects[] = "_defects";
 	char sub_result[] = "_result";
@@ -32,6 +30,12 @@ int main()
 	//->轮廓提取(点数组的数组)->轮廓筛选(点数组)
 	//->归一化傅里叶描述子分析(实数数组)
 	Mat src = imread(path, 1);
+	if (src.empty())
+	{
+		printf("文件不存在或加载失败！您可以检查：\n");
+		printf("1.文件路径是否正确\n2.imread函数是否使用正常\n");
+		return -1;
+	}
 
 	Mat bnr = CprSeg(src);
 
@@ -61,10 +65,10 @@ int main()
 	imwrite(path_hull, imhull);
 	imwrite(path_defects, imdefects);
 
-	FILE *fp = fopen(path_result, "a");
-	char note[10]={0};
-	sprintf(note,"%s%s",file,"：");
-	fprintf(fp,note);
+	FILE* fp = fopen(path_result, "a");
+	char note[10] = { 0 };
+	sprintf(note, "%s%s", file, "：");
+	fprintf(fp, note);
 	fprintf(fp, "%s\t", result_name);
 	fprintf(fp, "%s", gesture_name);
 	fprintf(fp, "\n");
