@@ -5,6 +5,7 @@ void NameShow(Gesture gesture, char* HgName, char* gesture_name, char* result_na
 	switch (gesture)
 	{
 	case Palm:strcpy(gesture_name, "平展"); break;
+	case Ok:strcpy(gesture_name, "OK"); break;
 	case Check:strcpy(gesture_name, "对号"); break;
 	case Up:strcpy(gesture_name, "上指"); break;
 	case Down:strcpy(gesture_name, "下指"); break;

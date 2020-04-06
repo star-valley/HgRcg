@@ -17,10 +17,11 @@ using namespace cv;
 typedef enum gesture_enum
 {
 	Palm = 0,
-	Check = 1,
+	Ok = 1,
 	Up = 2,
 	Down = 3,
-	Illegal = 4
+	Check = 4,
+	Illegal = 5
 }Gesture;
 typedef enum result_enum
 {

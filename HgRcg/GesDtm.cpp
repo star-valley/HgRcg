@@ -17,6 +17,7 @@ Gesture GesDtm(Vec4i cwdpths, Point Dweb, curve contour)
 	switch (Nweb)
 	{
 	case 4:gesture = Palm; break;
+	case 3:gesture = Ok; break;
 	case 2:gesture = Check; break;
 	case 1:gesture = drc(Dweb, contour); break;
 	default:gesture = Illegal;
