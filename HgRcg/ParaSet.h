@@ -1,6 +1,8 @@
 #pragma once
 #include <stdio.h>
 #include <iostream>
+#include <fstream>
+#include <string>
 
 #include <math.h>
 
@@ -36,4 +38,4 @@ extern Mat EdgeDtc(Mat gray);
 extern curve ContourExtr(Mat image, Mat& imcontour);
 extern Vec4i HullDscr(curve contour, Size ImgSize, Point& Dweb, Mat& imhull, Mat& imdefects);
 extern Gesture GesDtm(Vec4i cwdpths, Point Dweb, curve contour);
-extern void NameShow(Gesture gesture, char* HgName, char* gesture_name, char* result_name);
+extern void NameShow(Gesture gesture, string HgName, string& gesture_name, string& result_name);
