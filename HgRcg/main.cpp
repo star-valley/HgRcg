@@ -24,8 +24,8 @@ int main()
 	Mat src = imread(path, 1);
 	if (src.empty())
 	{
-		printf("文件不存在或加载失败！您可以检查：\n");
-		printf("1.文件路径是否正确\n2.imread函数是否使用正常\n");
+		cout << "文件不存在或加载失败！您可以检查：" << endl;
+		cout << "1.文件路径是否正确" << endl << "2.imread函数是否使用正常" << endl;
 		return -1;
 	}
 
